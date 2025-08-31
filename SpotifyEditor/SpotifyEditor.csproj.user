@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="View\Board.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\CloseButtonView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\GenericListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\PlaylistPreviewerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\TimePeriodSliderView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\UserInputBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BasicGeneratorNodes\ArtistGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\AlbumBatchGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\ArtistBatchGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BasicGeneratorNodes\TrackGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UserTopArtistsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\Ports\InputPortView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\Ports\OutputPortView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\UtilityNodes\PrinterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,116 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:helpers="clr-namespace:SpotifyEditor.Helpers">
+
+    <ControlTemplate x:Key="ModernTextBoxWithPlaceholder" TargetType="TextBox">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="8"
+                SnapsToDevicePixels="True"
+                UseLayoutRounding="True">
+            <Grid>
+                <!-- User Input -->
+                <ScrollViewer x:Name="PART_ContentHost"
+              Margin="0"
+              Padding="0"
+              VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch"
+              VerticalScrollBarVisibility="Hidden"
+              HorizontalScrollBarVisibility="Hidden"/>
+
+                <!-- Placeholder -->
+                <Border x:Name="PART_PlaceholderBorder"
+        Background="#33FFFFFF"
+        CornerRadius="8"
+        IsHitTestVisible="False"
+        Visibility="Collapsed"
+        Margin="0" Padding="0">
+                    <TextBlock x:Name="PART_Placeholder"
+               Text="{Binding (helpers:WatermarkService.Placeholder), RelativeSource={RelativeSource TemplatedParent}}"
+               TextWrapping="Wrap"
+               FontSize="{TemplateBinding FontSize}"
+               FontWeight="{TemplateBinding FontWeight}"
+               TextAlignment="{TemplateBinding TextAlignment}"
+                HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"  
+               Foreground="{TemplateBinding Foreground}" />
+                </Border>
+            </Grid>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="Text" Value="">
+                <Setter TargetName="PART_PlaceholderBorder" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter TargetName="PART_PlaceholderBorder" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="PART_PlaceholderBorder" Property="Visibility" Value="Collapsed"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="ModernTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#1ED760"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Background" Value="#2E2E2E"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template" Value="{StaticResource ModernTextBoxWithPlaceholder}"/>
+    </Style>
+
+
+    <Style x:Key="PlaylistTextBoxBase" TargetType="TextBox" BasedOn="{StaticResource ModernTextBox}">
+    </Style>
+
+   
+    <Style x:Key="PlaylistTitleStyle" TargetType="TextBox" BasedOn="{StaticResource PlaylistTextBoxBase}">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="#222222"/>
+    </Style>
+
+
+    <Style x:Key="PlaylistUserUrlStyle" TargetType="TextBox" BasedOn="{StaticResource PlaylistTextBoxBase}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="36"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="#444444"/>
+    </Style>
+
+
+    <Style x:Key="PlaylistDescriptionStyle" TargetType="TextBox" BasedOn="{StaticResource PlaylistTextBoxBase}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="120"/>
+        <Setter Property="Padding" Value="12,6,12,6"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="#444444"/>
+    </Style>
+
+    <Style x:Key="NumberOfItemsStyle" TargetType="TextBox" BasedOn="{StaticResource PlaylistTextBoxBase}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="120"/>
+        <Setter Property="Padding" Value="12,6,12,6"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="#444444"/>
+    </Style>
+
+</ResourceDictionary>

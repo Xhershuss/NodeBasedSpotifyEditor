@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="SpotifyClientId" value="YOUR_CLIENT_ID_HERE"/>
+    <add key="SpotifyClientSecret" value="YOUR_CLIENT_SECRET_HERE"/>
+  </appSettings>
+</configuration>

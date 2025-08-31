@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SpotifyEditor.View.Nodes.Common.UserInputBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SpotifyEditor.View.Nodes.Common"
+             mc:Ignorable="d" 
+            >
+    <Grid>
+        <TextBox x:Name="InputTextBox" 
+                    
+                    Style="{StaticResource ModernTextBox}"
+                     Text="{Binding UserInputText, UpdateSourceTrigger=PropertyChanged}" 
+                     Width="180" Height="30" 
+                     Margin="10" 
+                     VerticalAlignment="Top" 
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     />
+    </Grid>
+</UserControl>

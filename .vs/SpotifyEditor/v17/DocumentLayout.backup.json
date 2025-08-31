@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eren_\\Desktop\\Yedek\\SpotifyEditor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA9C23D8-3357-4592-9608-117A2DCE81CD}|SpotifyEditor\\SpotifyEditor.csproj|c:\\users\\eren_\\desktop\\yedek\\spotifyeditor\\spotifyeditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FA9C23D8-3357-4592-9608-117A2DCE81CD}|SpotifyEditor\\SpotifyEditor.csproj|solutionrelative:spotifyeditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA9C23D8-3357-4592-9608-117A2DCE81CD}|SpotifyEditor\\SpotifyEditor.csproj|c:\\users\\eren_\\desktop\\yedek\\spotifyeditor\\spotifyeditor\\view\\board.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FA9C23D8-3357-4592-9608-117A2DCE81CD}|SpotifyEditor\\SpotifyEditor.csproj|solutionrelative:spotifyeditor\\view\\board.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 353,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Board.xaml",
+              "DocumentMoniker": "C:\\Users\\eren_\\Desktop\\Yedek\\SpotifyEditor\\SpotifyEditor\\View\\Board.xaml",
+              "RelativeDocumentMoniker": "SpotifyEditor\\View\\Board.xaml",
+              "ToolTip": "C:\\Users\\eren_\\Desktop\\Yedek\\SpotifyEditor\\SpotifyEditor\\View\\Board.xaml",
+              "RelativeToolTip": "SpotifyEditor\\View\\Board.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-31T23:37:54.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\eren_\\Desktop\\Yedek\\SpotifyEditor\\SpotifyEditor\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SpotifyEditor\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\eren_\\Desktop\\Yedek\\SpotifyEditor\\SpotifyEditor\\MainWindow.xaml",
+              "RelativeToolTip": "SpotifyEditor\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-31T23:36:54.157Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 47,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

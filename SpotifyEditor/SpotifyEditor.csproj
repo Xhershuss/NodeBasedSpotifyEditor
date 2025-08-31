@@ -1,0 +1,133 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>False</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="View\Nodes\BaseNodeView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Icons\ClearIcon.png" />
+    <None Remove="Assets\Icons\ResetIcon.png" />
+    <None Remove="Assets\Icons\SaveIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="View\Nodes\BaseNodeView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <ProjectReference Include="..\Api\Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\ClearIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\ResetIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\SaveIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\Nodes\Common\YearSlider.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\TimeDurationSlider.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\Common\ScoreSlider.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\DeleteFromSavedTracksNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\DeleteFromPlaylistNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\AddToPlaylistNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\PlaylistCreatorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\AddToSavedTracksNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\CreatorNodes\AddToQueueNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\FilterNodes\AlbumReleaseDateFilterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\FilterNodes\AlbumFilterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\FilterNodes\ArtistFilterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\FilterNodes\DurationFilterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\FilterNodes\PopularityFilterNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BasicGeneratorNodes\AlbumGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BasicGeneratorNodes\PlaylistGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\UsersPlaylistsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\ArtistsTopTracksGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\ArtistsAlbumsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\TrackBatchGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\BatchGeneratorNodes\NewAlbumReleasesGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UsersFollowedArtistsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UserSavedTracksGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\RecentlyPlayedTracksGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\CurrentUsersPlaylistsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UsersQueueGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UserSavedAlbumsGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\GeneratorNodes\UserSpecificGeneratorNodes\UserTopTracksGeneratorNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Nodes\UtilityNodes\RemoveDuplicatesNodeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

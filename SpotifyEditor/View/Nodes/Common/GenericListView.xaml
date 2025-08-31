@@ -1,0 +1,118 @@
+﻿<Window x:Class="SpotifyEditor.View.Nodes.Common.GenericListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:SpotifyEditor.View.Nodes.Common"
+        mc:Ignorable="d" 
+        x:Name="BatchWindow"
+        Height="600" Width="600"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="Generic List View"
+        ResizeMode="NoResize">
+
+
+    <Border BorderBrush="White" BorderThickness="2" CornerRadius="10"  MouseDown="Grid_MouseDown">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#1E1E1E" Offset="0.0"/>
+                <GradientStop Color="#181818" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"/>
+                <ColumnDefinition Width="280*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="0"
+        Background="#2E2E2E"
+        CornerRadius="10"
+        Padding="0"
+        Margin="0,0,6,0"
+        BorderBrush="White"
+        BorderThickness="1.5"
+        ClipToBounds="True">
+
+                <ListView x:Name="listView"
+              Background="Transparent"
+              BorderThickness="0"
+              ItemsSource="{Binding Items}"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+              SelectionMode="Extended"
+              HorizontalContentAlignment="Stretch"
+              VerticalContentAlignment="Center">
+
+       
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Margin" Value="2"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="5"
+                                    Padding="5">
+                                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="#1ED760"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="#169a45"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="15" FontWeight="DemiBold" Margin="5,2" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+            <StackPanel Margin="291,0,0,50" HorizontalAlignment="Left" Width="289" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding ItemType}"  FontSize="24" FontWeight="Bold" Foreground="White" Margin="5,5,5,5" Width="240"/>
+
+                <TextBox Text="{Binding UserInputText, UpdateSourceTrigger=PropertyChanged}" 
+                         Style="{StaticResource ModernTextBox}" Width="240" Grid.Row="0" Margin="5,5,5,5"/>
+
+                <Button Content="Add Item" Height="40" Width="120" FontSize="14" Style="{StaticResource ModernButton}" Grid.Row="1"
+                        Command="{Binding AddItemCommand}" CommandParameter="{Binding UserInputText}" Margin="83,20,83,0"/>
+
+                <Button Content="Remove Item" Height="40"
+            Width="120" FontSize="14" Style="{StaticResource ModernButton}" Command="{Binding RemoveItemCommand}"
+            CommandParameter="{Binding SelectedItems, ElementName=listView}"
+                    Margin="83,20,83,20"/>
+                <Button Content="Clear List" Width="120" Height="40" FontSize="14" Style="{StaticResource ModernButton}"
+                        Command="{Binding ClearItemsCommand}"/>
+
+            </StackPanel>
+
+
+            <Button Content="DONE" Grid.Column="1" Margin="0,0,10,10" Width="120" FontSize="16" Height="40" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                Command="{Binding ConfirmCommand}" CommandParameter="{Binding ElementName=BatchWindow}" 
+                Style="{StaticResource ModernButton}"/>
+        </Grid>
+    </Border>
+</Window>
