@@ -39,7 +39,7 @@
                                     <Path x:Name="Arrow"
                                   HorizontalAlignment="Right"
                                   VerticalAlignment="Center"
-                                  Margin="150,0,0,0"
+                                  Margin="160,0,0,0"
                                   Width="8"
                                   Height="8"
                                   Fill="White"
