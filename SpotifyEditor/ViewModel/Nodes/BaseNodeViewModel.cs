@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
@@ -237,14 +238,20 @@ namespace SpotifyEditor.ViewModel.Nodes
 
                         var line = new Line
                         {
-                            Stroke = Brushes.Red,
+                            Stroke = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1ED760")),
                             StrokeThickness = 2,
-                            StrokeDashArray = new DoubleCollection() { 5, 2 },
                             IsHitTestVisible = false,
                             X1 = startPoint.X,
                             Y1 = startPoint.Y,
                             X2 = endPoint.X,
-                            Y2 = endPoint.Y
+                            Y2 = endPoint.Y,
+                            Effect = new DropShadowEffect
+                            {
+                                Color = System.Windows.Media.Color.FromRgb(50, 255, 100),
+                                BlurRadius = 20,
+                                ShadowDepth = 0,
+                                Opacity = 1.0
+                            }
                         };
 
                         OutputPortView.SuccessedConnections.Add(
@@ -271,6 +278,20 @@ namespace SpotifyEditor.ViewModel.Nodes
             });
 
             SaveNodes  = new RelayCommand<string>(o => {
+
+                foreach (var node in _nodeService.AllNodes)
+                {
+                    node.IsExecuted = false;
+                    node.ReverseIndicator();
+                    foreach (var inputPort in node.InputPorts)
+                    {
+                        inputPort.InputPortData = null;
+                    }
+                    foreach (var outputPort in node.OutputPorts)
+                    {
+                        outputPort.OutputPortData = null;
+                    }
+                }
 
                 var filepath = FileService.SelectFolder();
                 if (string.IsNullOrEmpty(filepath))

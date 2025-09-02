@@ -46,10 +46,7 @@ namespace SpotifyEditor.Helpers
                 {
                     idSegment = idSegment.Substring(0, queryIndex);
                 }
-                if(idSegment.Length != 22)
-                {
-                    throw new Exception("The URL seems incomplete. Please check your Spotify link.");
-                }
+           
                 return idSegment;   
             }
             catch (Exception ex) {

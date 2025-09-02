@@ -98,7 +98,7 @@ namespace SpotifyEditor.Model
                         break;
 
                     case List<Artist> artistList:
-                        if(!withArtist)
+                        if( artistList.Count() != 0 && !withArtist )
                             throw new InvalidOperationException("Expected Track or Track List but found Artist List.");
                         break;
                     case Album album:
